@@ -7,11 +7,11 @@
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="GS Tech Quick Scanner" />
-  <title>GS Tech Quick Scanner - QR Scanner & Live Class</title>
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="apple-touch-icon" href="/icon-512.png" />
-  <link rel="icon" type="image/png" href="/icon-192.png" />
+  <meta name="apple-mobile-web-app-title" content="GS Tech Scanner" />
+  <title>GS Tech Scanner - QR Scanner & Live Class</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-512.png" />
+  <link rel="icon" type="image/png" href="icon-192.png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js" defer></script>
   <style>
@@ -20,7 +20,7 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Hind Siliguri','Noto Sans Bengali',system-ui,sans-serif;min-height:100vh}
     .app-shell{max-width:520px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;padding-bottom:76px}
     .topbar{position:sticky;top:0;z-index:40;background:linear-gradient(135deg,#065f46 0%,#0f766e 60%,#1e3a8a 100%);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 6px 20px rgba(0,0,0,.35)}
-    .brand-title{font-size:1.1rem;font-weight:800;line-height:1.25}
+    .brand-title{font-size:1.25rem;font-weight:800;line-height:1.25;color:#FFEB00}
     .brand-sub{font-size:.72rem;color:#d1fae5;opacity:.92}
     .badge-adfree{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;padding:4px 10px;border-radius:999px;font-size:.7rem;font-weight:800;white-space:nowrap}
     .content{padding:14px;display:flex;flex-direction:column;gap:14px;flex:1}
@@ -84,7 +84,7 @@
   <div class="app-shell">
     <header class="topbar">
       <div>
-        <div class="brand-title">⚡ GS Tech Quick Scanner</div>
+        <div class="brand-title">⚡ GS Tech Scanner</div>
         <div class="brand-sub">QR স্ক্যানার + লাইভ ক্লাস - ১০০% বিজ্ঞাপনমুক্ত</div>
       </div>
       <span class="badge-adfree">✔ AD FREE</span>
@@ -137,11 +137,11 @@
       </section>
       <section id="pane-guide" class="tab-pane">
         <div class="panel" style="line-height:1.65;font-size:.86rem;color:#e2e8f0;">
-          <div style="font-weight:800;font-size:1rem;color:#34d399;">📲 GS Tech Quick Scanner অ্যাপ হিসেবে ইনস্টল করুন</div>
+          <div style="font-weight:800;font-size:1rem;color:#FFEB00;">📲 GS Tech Scanner অ্যাপ হিসেবে ইনস্টল করুন</div>
           <ol style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;">
             <li>Chrome ব্রাউজারে এই লিংকটি খুলুন।</li>
             <li>উপরের ডান কোণার <b>তিন ডট (⋮)</b> মেনুতে চাপুন এবং <b>"Add to Home screen"</b> / <b>"Install app"</b> নির্বাচন করুন।</li>
-            <li>হোম স্ক্রিনে <b>GS Tech Quick Scanner</b> আইকন চলে আসবে।</li>
+            <li>হোম স্ক্রিনে <b>GS Tech Scanner</b> আইকন চলে আসবে।</li>
           </ol>
           <div style="padding:10px 12px;background:rgba(16,185,129,.14);border:1px solid rgba(52,211,153,.4);border-radius:10px;font-size:.8rem;"><b>টিপস:</b> ক্যামেরার জন্য ফাইলটি <b>https://</b> ঠিকানা থেকে খোলা জরুরি।</div>
         </div>
@@ -198,7 +198,7 @@
     document.getElementById('liveRoom').addEventListener('change',updateLiveLinks);
     document.getElementById('joinLiveBtn').addEventListener('click',()=>{stopCamera();updateLiveLinks();var name=(document.getElementById('liveName').value||'').trim();var url=getLiveUrl();if(name)showToast('স্বাগতম '+name+'! লাইভ ক্লাস খোলা হচ্ছে...');else showToast('লাইভ ক্লাস খোলা হচ্ছে...');document.getElementById('jitsiFrame').scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>{window.open(url,'_blank','noopener')},400)});
     document.getElementById('copyLiveLinkBtn').addEventListener('click',()=>{var url=getLiveUrl();if(navigator.clipboard)navigator.clipboard.writeText(url).then(()=>showToast('📋 লাইভ ক্লাস লিংক কপি হয়েছে!'))});
-    if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{})})}
+    if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})})}
   })();
   </script>
 </body>
