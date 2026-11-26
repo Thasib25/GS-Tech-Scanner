@@ -1,5 +1,5 @@
-const CACHE = 'gs-tech-scanner-v1';
-const FILES = ['/qr.html','/manifest.json','/icon-192.png','/icon-512.png'];
+const CACHE = 'gs-tech-scanner-v3';
+const FILES = ['./qr.html','./manifest.json','./icon-192.png','./icon-512.png'];
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
 });
@@ -12,5 +12,5 @@ self.addEventListener('fetch', (e) => {
     const copy = res.clone();
     caches.open(CACHE).then((c) => c.put(e.request, copy));
     return res;
-  }).catch(() => caches.match('/qr.html'))));
+  }).catch(() => caches.match('./qr.html'))));
 });
