@@ -12,5 +12,5 @@ self.addEventListener('fetch', (e) => {
     const copy = res.clone();
     caches.open(CACHE).then((c) => c.put(e.request, copy));
     return res;
-  }).catch(() => caches.match('./qr.html'))));
+  }).catch(() => caches.match('./index.html'))));
 });
